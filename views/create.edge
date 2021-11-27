@@ -1,0 +1,39 @@
+@layout('layouts.app')
+{{--  this will bring navigation bar to the top of the page  --}}
+@section('content')
+    {{--  this the form to take the input from the user title description and pdf file to upload.  --}}
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Upload Documents</h5>
+            <button type="button" class="btn-close btn-outline-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form  action="/create/store" method="POST" enctype="multipart/form-data">
+                <div class="row g-2">
+                    <div class="col-sm">
+                        <label for="recipient-name" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="title"  >
+                    </div>
+                    <div class="col-sm">
+                        <label for="recipient-name" class="col-form-label">year</label>
+                         <input type="text" class="form-control" id="recipient-name" name="tag"  >
+                    </div>
+                    <div class="col-sm">
+                        <label for="due-date" class="col-form-label">Date</label>
+                        <input type="datetime-local" class="form-control" name="duedate" id="due-date"/>
+                     </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="message-text" name="description"></textarea>
+                </div>
+                <div class="mb-3">
+                        <label for="formFile" class="form-label">Upload</label>
+                        <input class="form-control-file" type="file" id="formFile" name="filepdf" autocomplete="off" >
+                </div>
+                <div class="center">
+                        <button class="btn btn-primary">submit</button>
+                </div>            
+            </form>
+        </div>
+@endsection

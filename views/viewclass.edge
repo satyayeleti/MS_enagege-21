@@ -1,0 +1,21 @@
+@layout('layouts.app')
+{{--  this will bring navigation bar to the top of the page  --}}
+@section('content')
+{{--  this the dummy page that will show the todo assignments to students.  --}}
+<div class="row g-3">
+    <h6 class="col-sm">Students : 80 </h6>
+    <h6 class="col-sm">Teachers : 3</h6>
+    <div style="text-align:center;">
+          <a class="btn btn-primary" href="/create/new" role="button">Add assignment</a>
+    </div>
+</div>
+<div  class="card-wrapper">
+    <div class="card">
+        <h5 class="center">No Assignment Assigned Yet</h5>     
+    </div> 
+    <div class="card">
+        <h4>Assign 1</h4>
+        <h5>submit before dec 11</h5>
+    </div>
+</div>
+@endsection

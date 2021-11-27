@@ -1,0 +1,27 @@
+@layout('layouts.app')
+{{--  this will bring navigation bar to the top of the page  --}}
+@section('content')
+  {{--  this is the login page which has email and password fields.  --}}
+  <div class="card-wrapper">
+    <div class="card">
+      <h1 class="center">Log In</h1>
+        @if(errors.length>0)
+          <ul class="list-group">
+             @each(error in errors)
+                <li class="list-group-item text-danger">
+                 {{error}}
+                </li>
+             @endeach
+          </ul>
+        @endif
+      <form action="/users/login" method ="POST" name="login_form">
+        <label for="email">Email</label><i class="fa fa-envelope mx-2" style="font-size:large"></i>
+            <input type="email" name="email" value="{{data.email||''}}" class="field" required>
+         <label for="password">Password</label><i class="fa fa-lock mx-2" style="font-size:x-large"></i>
+            <input type="password" name="password" class="field" required>
+            <p class="error error--hidden"></p>
+          <input type="submit" value="log in" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+@endsection

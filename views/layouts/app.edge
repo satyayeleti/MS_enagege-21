@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>students document blog</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark d-flex">       
+        <div class="container align-items-center">
+            <div class="navbar-brand">
+                <h3><a href="/" class="text-decoration-none text-white">doc_blog</a></h3>
+            </div>
+         <a class="btn-outline-secondary btn navbar-brand" href="/create/new">upload docs</a>
+         <a class="btn-outline-secondary btn navbar-brand" href="/showfiles">show uploaded docs</a>
+         @if(!auth)
+         <a class="btn-outline-secondary btn navbar-brand" href="/login">Login</a>
+         <a class="btn-outline-secondary btn navbar-brand" href="/register">register</a>
+         @endif
+         @if(auth)
+         <a class="btn-outline-secondary btn navbar-brand" href="/logout">logout</a>
+         @endif
+        </div>
+        {{--  this is navigation bar which will appear on all the pages  --}}
+    </nav>
+   @!section('content')
+
+   
+<script src="jquery.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+</body>
+</html>

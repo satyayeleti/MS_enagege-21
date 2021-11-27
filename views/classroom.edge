@@ -1,0 +1,48 @@
+@layout('layouts.app')
+{{--  this will bring navigation bar to the top of the page  --}}
+@section('content')
+  <div class="card-wrapper">
+    <div class="card">
+      <h1 class="center">Classroom</h1>
+        @if(auth)
+          <p class="center">You are currently logged in.</p>
+        @endif
+        <p>Users:</p>
+        @each(user in users)  
+        <h6 class="card-title">{{user.username}}</h6>
+        @endeach
+    </div>
+    <div class="card">
+      <h2 class="center">Your Info</h2>
+        <p>
+        @if(auth) 
+          <strong>ID: Satya_0907</strong> <br>
+          <strong>Name: Satyalakshmi</strong> <br>
+          <strong>Email: yeletisatyalakshmi@gmail.com</strong>
+        @endif
+        </p>
+      <button id="myDIV" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Create Classroom
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create Classroom</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+      
+  <div class="card">
+    <div class="center mt-2">
+      <a href="viewclass" class="btn btn-outline-success">View Class</a>
+    </div>
+  </div>
+  
+</div>
+@endsection
+
+
